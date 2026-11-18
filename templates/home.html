@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+{% block content %}
+<div class="container">
+    {% for book in books %}
+        <h4>{{ book.title }}</h4>
+        <p>{{ book.author }}</p>
+        <p>{{ book.isbn }}</p> <!-- Change back to book.isdn if that is your exact model field name -->
+        <p>{{ book.description }}</p>
+        <p>{{ book.genre }}</p>
+    {% empty %}
+        <p>No books available yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
